@@ -22,9 +22,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -33,7 +31,6 @@ body {
   cursor: none;
 }
 
-/* Custom cursor */
 .cursor {
   position: fixed;
   width: 8px; height: 8px;
@@ -56,7 +53,6 @@ body {
   transition: all 0.15s ease;
 }
 
-/* Noise overlay */
 body::before {
   content: '';
   position: fixed;
@@ -67,7 +63,6 @@ body::before {
   z-index: 1000;
 }
 
-/* NAV */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -138,7 +133,6 @@ nav {
     radial-gradient(ellipse 40% 40% at 50% 80%, #D4A85306, transparent);
 }
 
-/* Animated grid */
 .hero-grid {
   position: absolute;
   inset: 0;
@@ -232,10 +226,7 @@ nav {
   transition: all 0.2s;
 }
 
-.btn-primary:hover {
-  background: var(--gold2);
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
 
 .btn-secondary {
   background: transparent;
@@ -251,10 +242,7 @@ nav {
   transition: all 0.2s;
 }
 
-.btn-secondary:hover {
-  border-color: var(--teal);
-  color: var(--teal);
-}
+.btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
 
 .hero-stats {
   display: flex;
@@ -263,7 +251,6 @@ nav {
   border-top: 1px solid var(--border);
 }
 
-.stat-item {}
 .stat-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 42px;
@@ -273,6 +260,7 @@ nav {
 }
 
 .stat-num span { color: var(--teal); }
+
 .stat-label {
   font-size: 11px;
   color: var(--muted);
@@ -281,7 +269,6 @@ nav {
   margin-top: 4px;
 }
 
-/* Floating code block */
 .hero-visual {
   position: absolute;
   right: 60px;
@@ -308,6 +295,7 @@ nav {
 }
 
 .code-dot { width: 10px; height: 10px; border-radius: 50%; }
+
 .code-body {
   padding: 20px;
   font-family: 'JetBrains Mono', monospace;
@@ -332,7 +320,6 @@ nav {
 
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-/* Result card floating */
 .result-card {
   position: absolute;
   bottom: -20px;
@@ -350,15 +337,66 @@ nav {
 
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 
-.result-icon { font-size: 24px; }
-.result-text { }
 .result-val {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 24px;
   color: var(--teal);
   letter-spacing: 1px;
 }
+
 .result-desc { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 60px;
+}
+
+.trust-bar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trust-label {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.trust-items {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.trust-item-icon {
+  width: 32px; height: 32px;
+  background: #00C9A710;
+  border: 1px solid #00C9A730;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
 
 /* SECTIONS */
 .section {
@@ -367,9 +405,7 @@ nav {
   margin: 0 auto;
 }
 
-.section-full {
-  padding: 100px 60px;
-}
+.section-full { padding: 100px 60px; }
 
 .section-tag {
   font-size: 11px;
@@ -454,16 +490,115 @@ nav {
   margin-bottom: 20px;
 }
 
-.service-price {
-  display: inline-block;
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.service-tag {
   background: #00C9A710;
-  border: 1px solid #00C9A730;
+  border: 1px solid #00C9A725;
   color: var(--teal);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 1px;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 2px;
+  text-transform: uppercase;
+}
+
+/* WHY TRUST ME */
+.trust-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 60px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+}
+
+.trust-card {
+  background: var(--bg3);
+  padding: 36px 32px;
+  position: relative;
+}
+
+.trust-card-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.trust-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.trust-card-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.trust-card-highlight {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: #00C9A708;
+  border: 1px solid #00C9A720;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--teal);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* GUARANTEE STRIP */
+.guarantee-strip {
+  padding: 32px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.guarantee-icon { font-size: 24px; flex-shrink: 0; }
+
+.guarantee-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.guarantee-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 /* CASE STUDIES */
@@ -499,10 +634,7 @@ nav {
   margin-bottom: 16px;
 }
 
-.case-tag-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-}
+.case-tag-dot { width: 8px; height: 8px; border-radius: 50%; }
 
 .case-tag-text {
   font-size: 11px;
@@ -541,7 +673,6 @@ nav {
   margin-bottom: 32px;
 }
 
-.case-result {}
 .case-result-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 36px;
@@ -557,11 +688,7 @@ nav {
   margin-top: 2px;
 }
 
-.case-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+.case-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .case-tech {
   background: var(--bg3);
@@ -573,7 +700,6 @@ nav {
   border-radius: 2px;
 }
 
-/* Case visual */
 .case-visual {
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -590,9 +716,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
-.case-visual-body {
-  padding: 24px;
-}
+.case-visual-body { padding: 24px; }
 
 .metric-row {
   display: flex;
@@ -624,10 +748,7 @@ nav {
   overflow: hidden;
 }
 
-.metric-fill {
-  height: 100%;
-  border-radius: 2px;
-}
+.metric-fill { height: 100%; border-radius: 2px; }
 
 .review-block {
   padding: 20px;
@@ -730,118 +851,6 @@ nav {
   text-transform: uppercase;
 }
 
-/* PRICING */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 60px;
-}
-
-.price-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 40px 32px;
-  position: relative;
-  transition: transform 0.2s;
-}
-
-.price-card:hover { transform: translateY(-4px); }
-
-.price-card.featured {
-  border-color: var(--teal);
-  background: var(--bg3);
-}
-
-.price-featured-tag {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--teal);
-  color: #000;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 4px 14px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.price-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.price-amount {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 52px;
-  color: var(--teal);
-  letter-spacing: 2px;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.price-period {
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 1px;
-  margin-bottom: 28px;
-}
-
-.price-features {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
-.price-features li {
-  font-size: 13px;
-  color: var(--muted);
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.price-features li::before {
-  content: '→';
-  color: var(--teal);
-  font-size: 12px;
-  flex-shrink: 0;
-}
-
-.price-cta {
-  display: block;
-  text-align: center;
-  padding: 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.price-cta.primary {
-  background: var(--teal);
-  color: #000;
-}
-
-.price-cta.secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.price-cta:hover { opacity: 0.85; }
-
 /* CONTACT */
 .contact-section {
   padding: 100px 60px;
@@ -870,6 +879,34 @@ nav {
 .contact-value { font-size: 15px; color: var(--text); }
 .contact-value a { color: var(--teal); text-decoration: none; }
 
+/* Free consult banner */
+.consult-banner {
+  background: linear-gradient(135deg, #00C9A715, #1A6EFF10);
+  border: 1px solid #00C9A730;
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.consult-banner-icon { font-size: 32px; flex-shrink: 0; }
+
+.consult-banner-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.consult-banner-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -889,7 +926,7 @@ nav {
   text-transform: uppercase;
 }
 
-.form-input, .form-textarea {
+.form-input, .form-textarea, .form-select {
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: 4px;
@@ -901,10 +938,8 @@ nav {
   transition: border-color 0.2s;
 }
 
-.form-input:focus, .form-textarea:focus {
-  border-color: var(--teal);
-}
-
+.form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--teal); }
+.form-select option { background: var(--bg2); }
 .form-textarea { min-height: 120px; resize: vertical; }
 
 .form-submit {
@@ -923,7 +958,13 @@ nav {
 
 .form-submit:hover { background: var(--gold2); }
 
-/* FOOTER */
+.form-note {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
 footer {
   background: var(--bg2);
   border-top: 1px solid var(--border);
@@ -941,12 +982,7 @@ footer {
 }
 
 .footer-logo span { color: var(--teal); }
-
-.footer-text {
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
+.footer-text { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
 
 .footer-available {
   display: flex;
@@ -956,17 +992,12 @@ footer {
   color: var(--teal);
 }
 
-/* Animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.fade-up {
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-}
-
+.fade-up { opacity: 0; animation: fadeUp 0.6s ease forwards; }
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
@@ -978,11 +1009,13 @@ footer {
   nav { padding: 0 24px; }
   .hero { padding: 100px 24px 60px; }
   .section, .contact-section { padding: 60px 24px; }
-  .cases-inner { padding: 60px 24px; }
-  .section-full, .testimonial-section { padding: 60px 24px; }
-  .services-grid, .case-card, .contact-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+  .cases-inner, .trust-inner { padding: 60px 24px; }
+  .section-full, .testimonial-section, .trust-bar { padding: 60px 24px; }
+  .services-grid, .case-card, .contact-grid, .trust-grid, .process-grid, .guarantee-strip { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
   footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  .case-card.reverse { direction: ltr; }
+  .trust-bar-inner { flex-direction: column; gap: 20px; }
 }
 </style>
 </head>
@@ -997,8 +1030,8 @@ footer {
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    <li><a href="#why-me">Why Me</a></li>
+    <li><a href="#contact" class="nav-cta">Get Free Consultation</a></li>
   </ul>
 </nav>
 
@@ -1027,7 +1060,7 @@ footer {
 
     <div class="hero-actions fade-up delay-3">
       <a href="#work" class="btn-primary">See My Work</a>
-      <a href="#contact" class="btn-secondary">Start a Project</a>
+      <a href="#contact" class="btn-secondary">Free Consultation →</a>
     </div>
 
     <div class="hero-stats fade-up delay-4">
@@ -1050,7 +1083,6 @@ footer {
     </div>
   </div>
 
-  <!-- Code visual -->
   <div class="hero-visual fade-up delay-5">
     <div class="code-block">
       <div class="code-header">
@@ -1070,17 +1102,14 @@ footer {
         <div>&nbsp;&nbsp;formats=[<span class="c-string">"PDF"</span>, <span class="c-string">"IMG"</span>]</div>
         <div>)</div>
         <div>&nbsp;</div>
-        <div><span class="c-var">result</span> = <span class="c-var">agent</span>.<span class="c-func">process</span>(</div>
-        <div>&nbsp;&nbsp;invoices=<span class="c-num">300</span></div>
-        <div>)</div>
+        <div><span class="c-var">result</span> = <span class="c-var">agent</span>.<span class="c-func">process</span>(invoices=<span class="c-num">300</span>)</div>
         <div>&nbsp;</div>
         <div><span class="c-comment"># Time saved: 42hrs/month ✓</span><span class="blink"></span></div>
       </div>
     </div>
-
     <div class="result-card">
-      <div class="result-icon">⚡</div>
-      <div class="result-text">
+      <div style="font-size:24px">⚡</div>
+      <div>
         <div class="result-val">₹18K/mo</div>
         <div class="result-desc">MANUAL WORK ELIMINATED</div>
       </div>
@@ -1088,46 +1117,258 @@ footer {
   </div>
 </section>
 
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-label">Trusted by businesses in</div>
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="trust-item-icon">🏭</div>
+        Manufacturing
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🚛</div>
+        Logistics
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">👗</div>
+        Retail
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🏥</div>
+        Healthcare
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">📦</div>
+        E-Commerce
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🏢</div>
+        SMEs
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SERVICES -->
 <section class="section" id="services">
   <div class="section-tag">What I Do</div>
   <h2 class="section-title">Services</h2>
-  <p class="section-sub">Focused on one thing — building AI systems that eliminate the manual work slowing your business down.</p>
+  <p class="section-sub">End-to-end AI automation — from document processing to full factory intelligence systems.</p>
 
   <div class="services-grid">
+
     <div class="service-card">
       <div class="service-num">01</div>
       <span class="service-icon">📄</span>
       <div class="service-name">Document & Invoice Automation</div>
-      <p class="service-desc">AI pipeline that reads invoices, purchase orders, and documents — extracts all fields automatically — exports GST-ready structured data. No manual entry. No errors.</p>
-      <span class="service-price">$500 – $2,000</span>
+      <p class="service-desc">AI pipeline that reads invoices, purchase orders, and documents — extracts all fields automatically — exports GST-ready structured data. No manual entry. No errors. Supports Tamil, Hindi and English documents.</p>
+      <div class="service-tags">
+        <span class="service-tag">Invoice AI</span>
+        <span class="service-tag">GST Ready</span>
+        <span class="service-tag">Multi-language</span>
+      </div>
     </div>
 
     <div class="service-card">
       <div class="service-num">02</div>
       <span class="service-icon">🏭</span>
       <div class="service-name">Industrial AI & Predictive Maintenance</div>
-      <p class="service-desc">Real-time equipment monitoring using sensor data and ML models. Detect anomalies and predict failures 24–48 hours before they happen. Built for factory environments.</p>
-      <span class="service-price">$2,000 – $5,000</span>
+      <p class="service-desc">Real-time equipment monitoring using sensor data and ML models. Detect anomalies and predict failures 24–48 hours before they happen. Built for factory environments. Prevents ₹5–50 lakh downtime losses.</p>
+      <div class="service-tags">
+        <span class="service-tag">LSTM Models</span>
+        <span class="service-tag">Real-time</span>
+        <span class="service-tag">IoT Ready</span>
+      </div>
     </div>
 
     <div class="service-card">
       <div class="service-num">03</div>
-      <span class="service-icon">🤖</span>
-      <div class="service-name">AI Business Intelligence</div>
-      <p class="service-desc">Ask questions about your business in plain English. Get instant answers, automated weekly reports, and live dashboards connected directly to your data.</p>
-      <span class="service-price">$800 – $2,500</span>
+      <span class="service-icon">📊</span>
+      <div class="service-name">Shift Report Automation</div>
+      <p class="service-desc">Factory workers fill a simple form. AI generates complete, formatted shift reports automatically and sends them to managers. Eliminates 2–3 hours of daily manual reporting. Full audit trail included.</p>
+      <div class="service-tags">
+        <span class="service-tag">Auto Reports</span>
+        <span class="service-tag">WhatsApp</span>
+        <span class="service-tag">Dashboard</span>
+      </div>
     </div>
 
     <div class="service-card">
       <div class="service-num">04</div>
+      <span class="service-icon">📦</span>
+      <div class="service-name">Inventory Intelligence System</div>
+      <p class="service-desc">Tracks stock levels automatically, predicts when to reorder, alerts on critical low stock and connects to supplier systems. Eliminates stockouts and overstocking — both of which cost your business silently every month.</p>
+      <div class="service-tags">
+        <span class="service-tag">Auto Reorder</span>
+        <span class="service-tag">Forecasting</span>
+        <span class="service-tag">Supplier API</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <span class="service-icon">🔍</span>
+      <div class="service-name">Quality Control AI</div>
+      <p class="service-desc">Camera-based defect detection in real time. Catches 95%+ of defects that manual inspection misses. Generates quality reports automatically and tracks rejection rates over time. Reduces customer complaints dramatically.</p>
+      <div class="service-tags">
+        <span class="service-tag">Computer Vision</span>
+        <span class="service-tag">Real-time</span>
+        <span class="service-tag">Auto Reports</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <span class="service-icon">💬</span>
+      <div class="service-name">BizBot — AI Business Chatbot</div>
+      <p class="service-desc">WhatsApp or website chatbot that answers customer queries 24/7, takes orders automatically and sends real-time updates. Your business never sleeps. Customers get instant replies even at 2 AM.</p>
+      <div class="service-tags">
+        <span class="service-tag">WhatsApp</span>
+        <span class="service-tag">24/7</span>
+        <span class="service-tag">Auto Orders</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">07</div>
+      <span class="service-icon">🤖</span>
+      <div class="service-name">AI Business Intelligence</div>
+      <p class="service-desc">Ask questions about your business in plain English. Get instant answers, automated weekly reports and live dashboards connected directly to your data. No more waiting for reports that take days to prepare.</p>
+      <div class="service-tags">
+        <span class="service-tag">Plain English</span>
+        <span class="service-tag">Live Dashboard</span>
+        <span class="service-tag">Auto Reports</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">08</div>
+      <span class="service-icon">📱</span>
+      <div class="service-name">WhatsApp Business Automation</div>
+      <p class="service-desc">Automated order confirmations, payment reminders, delivery updates and customer follow-ups via WhatsApp. Your team stops manually typing the same messages 50 times a day. Customers feel attended to. Always.</p>
+      <div class="service-tags">
+        <span class="service-tag">Auto Messages</span>
+        <span class="service-tag">Payment Alerts</span>
+        <span class="service-tag">Follow-ups</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">09</div>
+      <span class="service-icon">👥</span>
+      <div class="service-name">HR & Attendance Automation</div>
+      <p class="service-desc">Attendance tracking, leave management, payroll calculation and performance tracking — all automated. Eliminates HR headaches for companies with 20–500 employees. Payroll that used to take 3 days now takes 3 minutes.</p>
+      <div class="service-tags">
+        <span class="service-tag">Attendance</span>
+        <span class="service-tag">Payroll</span>
+        <span class="service-tag">Leave Mgmt</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">10</div>
       <span class="service-icon">⚙️</span>
       <div class="service-name">Custom AI Workflow Systems</div>
-      <p class="service-desc">End-to-end automation pipelines tailored to your specific process. Inventory management, customer follow-ups, quality control, reporting — if it's repetitive, it can be automated.</p>
-      <span class="service-price">$400 – $3,000</span>
+      <p class="service-desc">End-to-end automation pipelines built exactly for your specific process. If your team does it manually and repeatedly — it can be automated. Discovery call first. Solution designed around your exact workflow.</p>
+      <div class="service-tags">
+        <span class="service-tag">Custom Built</span>
+        <span class="service-tag">End-to-end</span>
+        <span class="service-tag">Any Process</span>
+      </div>
     </div>
+
   </div>
 </section>
+
+<!-- WHY TRUST ME -->
+<div class="trust-section" id="why-me">
+  <div class="trust-inner">
+    <div class="section-tag">Why Work With Me</div>
+    <h2 class="section-title">Built Different</h2>
+    <p class="section-sub">Not just another developer. A domain expert who understands your operations from the inside.</p>
+
+    <div class="trust-grid">
+
+      <div class="trust-card">
+        <span class="trust-card-icon">🏭</span>
+        <div class="trust-card-title">Manufacturing Insider</div>
+        <p class="trust-card-desc">I don't just write code. I understand factory operations, shift patterns, quality processes and production workflows from hands-on industrial engineering experience. I speak your language.</p>
+        <div class="trust-card-highlight">→ JSW Steel operations background</div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-card-icon">✅</span>
+        <div class="trust-card-title">Production Systems Only</div>
+        <p class="trust-card-desc">Every project in my portfolio is a live, production system solving a real business problem — not a demo, not a mockup. You can see exactly what I built and the results it delivered before you hire me.</p>
+        <div class="trust-card-highlight">→ 4+ live systems. Real clients. Real results.</div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-card-icon">🔒</span>
+        <div class="trust-card-title">Fixed Price. Zero Surprises.</div>
+        <p class="trust-card-desc">I quote a fixed price before any work begins. You know exactly what you pay and exactly what you get. No hourly billing. No scope creep. No unexpected invoices. 50% upfront — 50% on delivery.</p>
+        <div class="trust-card-highlight">→ Scope locked in writing before work starts</div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-card-icon">📹</span>
+        <div class="trust-card-title">Weekly Live Demos</div>
+        <p class="trust-card-desc">Every week you see the actual working system — not a status update email. You provide feedback. I incorporate it. You are never in the dark about where your project stands.</p>
+        <div class="trust-card-highlight">→ You see progress every 7 days. Guaranteed.</div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-card-icon">📦</span>
+        <div class="trust-card-title">Full Code Handover</div>
+        <p class="trust-card-desc">When we finish, you own everything. Complete source code, full documentation and deployment guides handed over. You are never dependent on me to keep your system running. It's yours completely.</p>
+        <div class="trust-card-highlight">→ 100% code ownership. No lock-in.</div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-card-icon">🌍</span>
+        <div class="trust-card-title">Global Ready, Local Priced</div>
+        <p class="trust-card-desc">Based in Chennai with international client experience. I understand both local Indian business processes and global automation standards. You get world-class AI systems at a fraction of Western agency costs.</p>
+        <div class="trust-card-highlight">→ Serving clients in India, UAE and globally</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE STRIP -->
+<div style="background:var(--bg);padding:40px 60px">
+  <div class="guarantee-strip" style="max-width:1100px;margin:0 auto;padding:0">
+    <div class="guarantee-item">
+      <div class="guarantee-icon">🆓</div>
+      <div>
+        <div class="guarantee-title">Free Discovery Call</div>
+        <div class="guarantee-desc">30 min — no commitment, no sales pitch</div>
+      </div>
+    </div>
+    <div class="guarantee-item">
+      <div class="guarantee-icon">📋</div>
+      <div>
+        <div class="guarantee-title">Written Scope First</div>
+        <div class="guarantee-desc">Clear deliverables before work begins</div>
+      </div>
+    </div>
+    <div class="guarantee-item">
+      <div class="guarantee-icon">⚡</div>
+      <div>
+        <div class="guarantee-title">2–4 Week Delivery</div>
+        <div class="guarantee-desc">Fast turnaround. No waiting months</div>
+      </div>
+    </div>
+    <div class="guarantee-item">
+      <div class="guarantee-icon">🔧</div>
+      <div>
+        <div class="guarantee-title">Post-Launch Support</div>
+        <div class="guarantee-desc">1 month free support after delivery</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CASE STUDIES -->
 <div class="cases-bg" id="work">
@@ -1136,7 +1377,7 @@ footer {
     <h2 class="section-title">Real Systems. Real Results.</h2>
     <p class="section-sub">Not demos. Not mockups. Production systems solving actual business problems.</p>
 
-    <!-- Case 1: Aalayam Boutique -->
+    <!-- Case 1 -->
     <div class="case-card" style="margin-top:60px">
       <div>
         <div class="case-tag">
@@ -1145,11 +1386,7 @@ footer {
         </div>
         <div class="case-client">Aalayam Boutique · Royapettah, Chennai · 5.0 ★ Google Reviews</div>
         <h3 class="case-title">Complete Boutique Management System</h3>
-        <p class="case-desc">
-          Aalayam Boutique was managing 40+ custom orders every month using handwritten notebooks and WhatsApp messages. Orders were missed. Payments forgotten. Fabric inventory unknown. The owner had no visibility into monthly revenue.
-          <br><br>
-          I built a complete AI-powered management system — order tracking, inventory management, automated WhatsApp customer updates, and a real-time revenue dashboard.
-        </p>
+        <p class="case-desc">Aalayam Boutique was managing 40+ custom orders every month using handwritten notebooks and WhatsApp messages. Orders were missed. Payments forgotten. The owner had no visibility into monthly revenue.<br><br>I built a complete AI-powered management system — order tracking, inventory management, automated WhatsApp customer updates, and a real-time revenue dashboard.</p>
         <div class="case-results">
           <div class="case-result">
             <div class="case-result-num" style="color:#D4A853">8hrs</div>
@@ -1172,7 +1409,6 @@ footer {
           <span class="case-tech">PostgreSQL</span>
         </div>
       </div>
-
       <div>
         <div class="case-visual">
           <div class="case-visual-header">
@@ -1186,23 +1422,17 @@ footer {
               <span class="metric-label">active_orders</span>
               <span class="metric-val" style="color:#D4A853">43</span>
             </div>
-            <div style="margin-bottom:12px">
-              <div class="metric-bar"><div class="metric-fill" style="width:86%;background:#D4A853"></div></div>
-            </div>
+            <div style="margin-bottom:12px"><div class="metric-bar"><div class="metric-fill" style="width:86%;background:#D4A853"></div></div></div>
             <div class="metric-row">
               <span class="metric-label">revenue_this_month</span>
               <span class="metric-val" style="color:#00C9A7">₹1,24,500</span>
             </div>
-            <div style="margin-bottom:12px">
-              <div class="metric-bar"><div class="metric-fill" style="width:73%;background:#00C9A7"></div></div>
-            </div>
+            <div style="margin-bottom:12px"><div class="metric-bar"><div class="metric-fill" style="width:73%;background:#00C9A7"></div></div></div>
             <div class="metric-row">
               <span class="metric-label">pending_payments</span>
               <span class="metric-val" style="color:#FF8C69">₹12,000</span>
             </div>
-            <div style="margin-bottom:12px">
-              <div class="metric-bar"><div class="metric-fill" style="width:20%;background:#FF8C69"></div></div>
-            </div>
+            <div style="margin-bottom:12px"><div class="metric-bar"><div class="metric-fill" style="width:20%;background:#FF8C69"></div></div></div>
             <div class="metric-row">
               <span class="metric-label">fabric_stock_alert</span>
               <span class="metric-val" style="color:#00C9A7">✓ Sufficient</span>
@@ -1213,7 +1443,6 @@ footer {
             </div>
           </div>
         </div>
-
         <div class="review-block" style="margin-top:16px">
           <div class="stars">★★★★★</div>
           <p class="review-text">"Earlier I used to forget customer orders and miss payments. Now everything is automatic. My customers get WhatsApp updates by themselves. I can see my full business on one screen."</p>
@@ -1222,7 +1451,7 @@ footer {
       </div>
     </div>
 
-    <!-- Case 2: SmartInvoice -->
+    <!-- Case 2 -->
     <div class="case-card reverse">
       <div>
         <div class="case-tag">
@@ -1231,11 +1460,7 @@ footer {
         </div>
         <div class="case-client">Logistics SME · Chennai, Tamil Nadu</div>
         <h3 class="case-title">AI Invoice Processing Pipeline</h3>
-        <p class="case-desc">
-          A mid-size logistics company was receiving 300+ invoices monthly from vendors and transporters. Their accountant spent 45 hours per month manually typing data into Excel — with frequent errors causing GST filing delays.
-          <br><br>
-          I built SmartInvoice AI — an OCR-powered pipeline that automatically extracts vendor, amount, date, GST number, and line items from any invoice format. 94% accuracy. Exports GST-ready Excel instantly.
-        </p>
+        <p class="case-desc">A mid-size logistics company was receiving 300+ invoices monthly. Their accountant spent 45 hours per month manually typing data into Excel — with frequent errors causing GST filing delays.<br><br>I built SmartInvoice AI — an LLM-powered pipeline that automatically extracts vendor, amount, date, GST number, and line items from any invoice format. Supports Tamil, Hindi and English. 94% accuracy. Exports GST-ready Excel instantly.</p>
         <div class="case-results">
           <div class="case-result">
             <div class="case-result-num" style="color:#00C9A7">94%</div>
@@ -1251,14 +1476,13 @@ footer {
           </div>
         </div>
         <div class="case-tags">
-          <span class="case-tech">PaddleOCR</span>
+          <span class="case-tech">Groq LLM</span>
           <span class="case-tech">FastAPI</span>
           <span class="case-tech">PostgreSQL</span>
           <span class="case-tech">Streamlit</span>
           <span class="case-tech">Docker</span>
         </div>
       </div>
-
       <div>
         <div class="case-visual">
           <div class="case-visual-header">
@@ -1272,16 +1496,12 @@ footer {
               <span class="metric-label">invoices_processed</span>
               <span class="metric-val" style="color:#00C9A7">312 / month</span>
             </div>
-            <div style="margin-bottom:12px">
-              <div class="metric-bar"><div class="metric-fill" style="width:94%;background:#00C9A7"></div></div>
-            </div>
+            <div style="margin-bottom:12px"><div class="metric-bar"><div class="metric-fill" style="width:94%;background:#00C9A7"></div></div></div>
             <div class="metric-row">
               <span class="metric-label">accuracy_rate</span>
               <span class="metric-val" style="color:#00C9A7">94.2%</span>
             </div>
-            <div style="margin-bottom:12px">
-              <div class="metric-bar"><div class="metric-fill" style="width:94%;background:#00C9A7"></div></div>
-            </div>
+            <div style="margin-bottom:12px"><div class="metric-bar"><div class="metric-fill" style="width:94%;background:#00C9A7"></div></div></div>
             <div class="metric-row">
               <span class="metric-label">processing_time</span>
               <span class="metric-val" style="color:#D4A853">4.2 sec/invoice</span>
@@ -1299,7 +1519,7 @@ footer {
       </div>
     </div>
 
-    <!-- Case 3: FactoryPulse -->
+    <!-- Case 3 -->
     <div class="case-card">
       <div>
         <div class="case-tag">
@@ -1308,11 +1528,7 @@ footer {
         </div>
         <div class="case-client">Manufacturing Plant · Tamil Nadu</div>
         <h3 class="case-title">Predictive Maintenance System</h3>
-        <p class="case-desc">
-          An unplanned machine failure at a manufacturing plant costs ₹5–50 lakh in downtime, repairs, and lost production. The plant was using reactive maintenance — fixing machines after they broke.
-          <br><br>
-          I built FactoryPulse — a real-time monitoring system using LSTM models to detect anomalies in sensor data and predict failures 24–48 hours before they occur.
-        </p>
+        <p class="case-desc">An unplanned machine failure costs ₹5–50 lakh in downtime, repairs, and lost production. The plant was using reactive maintenance — fixing machines after they broke.<br><br>I built FactoryPulse — a real-time monitoring system using LSTM models to detect anomalies in sensor data and predict failures 24–48 hours before they occur.</p>
         <div class="case-results">
           <div class="case-result">
             <div class="case-result-num" style="color:#FF6B35">48hr</div>
@@ -1336,7 +1552,6 @@ footer {
           <span class="case-tech">FastAPI</span>
         </div>
       </div>
-
       <div>
         <div class="case-visual">
           <div class="case-visual-header">
@@ -1354,9 +1569,7 @@ footer {
               <span class="metric-label">temperature_C</span>
               <span class="metric-val" style="color:#D4A853">78.4°</span>
             </div>
-            <div style="margin-bottom:12px">
-              <div class="metric-bar"><div class="metric-fill" style="width:62%;background:#D4A853"></div></div>
-            </div>
+            <div style="margin-bottom:12px"><div class="metric-bar"><div class="metric-fill" style="width:62%;background:#D4A853"></div></div></div>
             <div class="metric-row">
               <span class="metric-label">vibration_hz</span>
               <span class="metric-val" style="color:#00C9A7">42.1</span>
@@ -1384,28 +1597,28 @@ footer {
 <section class="section">
   <div class="section-tag">Process</div>
   <h2 class="section-title">How It Works</h2>
-  <p class="section-sub">Simple, transparent, no surprises.</p>
+  <p class="section-sub">Simple, transparent, no surprises. You always know what's happening.</p>
 
   <div class="process-grid">
     <div class="process-step">
       <div class="process-num">01</div>
-      <div class="process-name">Discovery Call</div>
-      <p class="process-desc">Free 30-min call. I understand your process, where time is wasted, and what the right solution looks like.</p>
+      <div class="process-name">Free Discovery Call</div>
+      <p class="process-desc">30-min call. I understand your process, where time is wasted, and what the right solution looks like. No obligation.</p>
     </div>
     <div class="process-step">
       <div class="process-num">02</div>
       <div class="process-name">Scope & Quote</div>
-      <p class="process-desc">Clear deliverables document. Fixed price. No surprises. 50% upfront before work begins.</p>
+      <p class="process-desc">Clear deliverables document. Fixed price. No surprises. You approve everything in writing before work begins.</p>
     </div>
     <div class="process-step">
       <div class="process-num">03</div>
-      <div class="process-name">Weekly Demos</div>
-      <p class="process-desc">You see progress every week. Live demos, not status updates. Feedback incorporated in real time.</p>
+      <div class="process-name">Weekly Live Demos</div>
+      <p class="process-desc">You see the actual working system every week — not status updates. Feedback incorporated in real time.</p>
     </div>
     <div class="process-step">
       <div class="process-num">04</div>
       <div class="process-name">Delivery & Handover</div>
-      <p class="process-desc">Live demo on video call. Your approval. Final payment. Full code + documentation handed over.</p>
+      <p class="process-desc">Live demo on video call. Your approval. Final payment. Full code + documentation. You own everything.</p>
     </div>
   </div>
 </section>
@@ -1418,76 +1631,27 @@ footer {
   <p class="testimonial-author">Owner · Aalayam Boutique · Royapettah, Chennai · ★★★★★ Google</p>
 </div>
 
-<!-- PRICING -->
-<section class="section" id="pricing">
-  <div class="section-tag">Investment</div>
-  <h2 class="section-title">Transparent Pricing</h2>
-  <p class="section-sub">Fixed scope. Fixed price. No hourly billing. No surprises.</p>
-
-  <div class="pricing-grid">
-    <div class="price-card">
-      <div class="price-name">Starter</div>
-      <div class="price-amount">$500</div>
-      <div class="price-period">One-time · 2 week delivery</div>
-      <ul class="price-features">
-        <li>Single automation workflow</li>
-        <li>Data extraction or processing</li>
-        <li>Excel / CSV export</li>
-        <li>Basic dashboard</li>
-        <li>2 rounds of revisions</li>
-        <li>Full code handover</li>
-      </ul>
-      <a href="#contact" class="price-cta secondary">Get Started</a>
-    </div>
-
-    <div class="price-card featured">
-      <div class="price-featured-tag">Most Popular</div>
-      <div class="price-name">Professional</div>
-      <div class="price-amount">$1,500</div>
-      <div class="price-period">One-time · 3-4 week delivery</div>
-      <ul class="price-features">
-        <li>Full AI system — multi-module</li>
-        <li>REST API + database</li>
-        <li>Production dashboard</li>
-        <li>WhatsApp / email integration</li>
-        <li>Docker deployment</li>
-        <li>Documentation included</li>
-        <li>1 month support</li>
-      </ul>
-      <a href="#contact" class="price-cta primary">Get Started</a>
-    </div>
-
-    <div class="price-card">
-      <div class="price-name">Enterprise</div>
-      <div class="price-amount">$4K+</div>
-      <div class="price-period">Custom · Timeline varies</div>
-      <ul class="price-features">
-        <li>Complex multi-system build</li>
-        <li>Industrial AI / IoT integration</li>
-        <li>Custom ML model training</li>
-        <li>Enterprise dashboard</li>
-        <li>Team training included</li>
-        <li>3 months support</li>
-        <li>SLA guarantee</li>
-      </ul>
-      <a href="#contact" class="price-cta secondary">Let's Talk</a>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="section-tag">Contact</div>
   <h2 class="section-title">Start a Project</h2>
-  <p class="section-sub">Have a process wasting your team's time? Tell me about it. Free consultation.</p>
+  <p class="section-sub">Tell me about your manual process. I'll tell you exactly how to automate it — for free.</p>
 
   <div class="contact-grid">
     <div>
+      <div class="consult-banner">
+        <div class="consult-banner-icon">🆓</div>
+        <div>
+          <div class="consult-banner-title">Free 30-Minute Consultation</div>
+          <div class="consult-banner-desc">No sales pitch. No commitment. Just an honest conversation about your process and whether AI automation makes sense for your business.</div>
+        </div>
+      </div>
+
       <div class="contact-item">
         <div class="contact-icon">📧</div>
         <div>
           <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:prajen@skailabs.in">skailabs.in@gmail.com</a></div>
+          <div class="contact-value"><a href="mailto:skailabs.in@gmail.com">skailabs.in@gmail.com</a></div>
         </div>
       </div>
       <div class="contact-item">
@@ -1501,7 +1665,7 @@ footer {
         <div class="contact-icon">📍</div>
         <div>
           <div class="contact-label">Location</div>
-          <div class="contact-value">Chennai, Tamil Nadu · Available Remote · 9500716115</div>
+          <div class="contact-value">Chennai, Tamil Nadu · Available Remote Worldwide</div>
         </div>
       </div>
       <div class="contact-item">
@@ -1534,10 +1698,25 @@ footer {
         <input type="email" class="form-input" placeholder="you@company.com">
       </div>
       <div class="form-group">
-        <label class="form-label">What Process Do You Want to Automate?</label>
-        <textarea class="form-textarea" placeholder="Describe the manual process your team currently does. How many hours does it take? How many people are involved?"></textarea>
+        <label class="form-label">Industry</label>
+        <select class="form-select">
+          <option value="">Select your industry</option>
+          <option>Manufacturing</option>
+          <option>Logistics & Transport</option>
+          <option>Retail & E-Commerce</option>
+          <option>Healthcare</option>
+          <option>Construction</option>
+          <option>Food & Beverage</option>
+          <option>Textile & Garments</option>
+          <option>Other</option>
+        </select>
       </div>
-      <button class="form-submit" onclick="submitForm()">Send Message →</button>
+      <div class="form-group">
+        <label class="form-label">What Manual Process Do You Want to Automate?</label>
+        <textarea class="form-textarea" placeholder="Describe what your team does manually. How many hours per week? How many people are involved? What goes wrong? The more detail you give, the more useful my response will be."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Book Free Consultation →</button>
+      <p class="form-note">⚡ I respond within 24 hours · No commitment required · 100% free</p>
     </div>
   </div>
 </section>
@@ -1553,94 +1732,82 @@ footer {
 </footer>
 
 <script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx - 4 + 'px';
-    cursor.style.top = my - 4 + 'px';
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx - 4 + 'px';
+  cursor.style.top = my - 4 + 'px';
+});
+
+function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx - 16 + 'px';
+  ring.style.top = ry - 16 + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+document.querySelectorAll('a, button, select').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(3)'; ring.style.opacity = '0'; });
+  el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.opacity = '0.4'; });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
   });
+}, { threshold: 0.1 });
 
-  function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx - 16 + 'px';
-    ring.style.top = ry - 16 + 'px';
-    requestAnimationFrame(animRing);
-  }
-  animRing();
+document.querySelectorAll('.service-card, .case-card, .process-step, .trust-card, .guarantee-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
 
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'scale(3)';
-      ring.style.opacity = '0';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'scale(1)';
-      ring.style.opacity = '0.4';
-    });
+function animateCounter(el, target, suffix = '') {
+  let current = 0;
+  const step = target / 60;
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.innerHTML = Math.round(current) + suffix;
+    if (current >= target) clearInterval(timer);
+  }, 16);
+}
+
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const nums = e.target.querySelectorAll('.stat-num');
+      const targets = [4, 40, 94, 4];
+      const suffixes = ['+', 'hrs', '%', 'wk'];
+      nums.forEach((n, i) => animateCounter(n, targets[i], `<span>${suffixes[i]}</span>`));
+      statsObserver.unobserve(e.target);
+    }
   });
+}, { threshold: 0.5 });
 
-  // Scroll reveal
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.service-card, .case-card, .process-step, .price-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-
-  // Animated counters
-  function animateCounter(el, target, suffix = '') {
-    let current = 0;
-    const step = target / 60;
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.innerHTML = Math.round(current) + suffix;
-      if (current >= target) clearInterval(timer);
-    }, 16);
-  }
-
-  const statsObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const nums = e.target.querySelectorAll('.stat-num');
-        const targets = [4, 40, 94, 4];
-        const suffixes = ['+', 'hrs', '%', 'wk'];
-        nums.forEach((n, i) => animateCounter(n, targets[i], `<span>${suffixes[i]}</span>`));
-        statsObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const statsEl = document.querySelector('.hero-stats');
-  if (statsEl) statsObserver.observe(statsEl);
+const statsEl = document.querySelector('.hero-stats');
+if (statsEl) statsObserver.observe(statsEl);
 </script>
-
 
 <script>
 async function submitForm() {
-
-  // PASTE YOUR WEB APP URL BELOW
   const SHEET_URL = "https://script.google.com/macros/s/AKfycbxz6fa_3a-AEs2z5_k4DWWrmE7e3q2J6lGlSyl8T4oM3Q7fSAR-cHGgVTaRfcEDMEfX/exec";
 
   const name    = document.querySelector('input[placeholder="Rajan Kumar"]').value.trim();
   const company = document.querySelector('input[placeholder="Your Company Name"]').value.trim();
   const email   = document.querySelector('input[type="email"]').value.trim();
+  const industry = document.querySelector('select').value;
   const message = document.querySelector('textarea').value.trim();
 
-  // Basic validation
   if (!name || !email || !message) {
     alert("Please fill in Name, Email and Message.");
     return;
@@ -1655,21 +1822,18 @@ async function submitForm() {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, company, email, message })
+      body: JSON.stringify({ name, company, email, industry, message })
     });
 
-    // Success
-    btn.textContent = "✓ Message Sent!";
+    btn.textContent = "✓ Consultation Booked!";
     btn.style.background = "#00C9A7";
     btn.style.color = "#000";
 
-    // Clear all fields
-    document.querySelectorAll('.form-input, .form-textarea')
-      .forEach(el => el.value = '');
+    document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.value = '');
+    document.querySelector('select').selectedIndex = 0;
 
-    // Reset button after 4 seconds
     setTimeout(() => {
-      btn.textContent = "Send Message →";
+      btn.textContent = "Book Free Consultation →";
       btn.style.background = "";
       btn.style.color = "";
       btn.disabled = false;
@@ -1684,4 +1848,3 @@ async function submitForm() {
 </script>
 </body>
 </html>
-
